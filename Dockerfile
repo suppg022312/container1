@@ -12,7 +12,7 @@ RUN . "$NVM_DIR/nvm.sh" && nvm install 20 && nvm use 20
 RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs && \
-    apt-get install -y python3 python3-pip net-tools iputils-ping && \
+    apt-get install -y python3 python3-pip net-tools iputils-ping git && \
     pip3 install uv flask streamlit
 
 COPY app.py /app/app.py
