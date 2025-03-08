@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  my-notebook:
+    image: my-notebook
+    build: .
+    ports:
+      - "0.0.0.0:0:8888"
+      - "0.0.0.0:0:4321"
+      - "0.0.0.0:0:4322"
+      - "0.0.0.0:0:4323"
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+      - net.ipv6.conf.default.disable_ipv6=1
+    volumes:
+      - /media/docker/my-notebook:/opt/notebook_data
